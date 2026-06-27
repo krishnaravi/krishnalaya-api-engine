@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+tsconfig.tsbuildinfo
+
+# Environment & secrets
+.env
+.env.*
+.git-credentials
+.ssh/
+
+# Logs & caches
+.npm/
+.cache/
+.local/
+.pm2/
+.config/
+.grok/
+.ollama/
+.wp-cli/
+
+# Shell / system files
+.bash_history
+.bashrc
+.bashrc.bak*
+.lesshst
+.mysql_history
+.python_history
+.profile
+.wget-hsts
+.gitconfig
+.claude.json
+.claude/
+
+# Backups & archives
+*.tar.gz
+*.sql
+backups/
+nginx-backup/
+default.conf.bak
+
+# Misc
+__pycache__/
+snap/
+get-docker.sh
+install.sh
+=
+wordpress_backup_20260618.sql
+wp-content/
+swagger/
+samples/
+openwebui-openclaw/
+numerology-cli/
+myapi/
+astrojyothi/
+astrojyothi-backup*/
+react_backup_20260618.tar.gz
