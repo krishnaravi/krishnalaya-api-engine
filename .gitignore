@@ -53,7 +53,10 @@ swagger/
 samples/
 openwebui-openclaw/
 numerology-cli/
-myapi/
+myapi/venv/
+myapi/env/
+myapi/__pycache__/
+myapi/**/__pycache__/
 astrojyothi/
 astrojyothi-backup*/
 react_backup_20260618.tar.gz
