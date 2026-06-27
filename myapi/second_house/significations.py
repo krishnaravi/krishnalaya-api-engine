@@ -8,7 +8,7 @@ Covers:
   4. Maraka (Maranam) risk
 """
 from __future__ import annotations
-from .constants import SIGNS, SIGN_LORDS, PLANET_KEY_MAP
+from core.constants import SIGNS, SIGN_LORDS, PLANET_KEY_MAP
 
 
 def _pkey(name: str) -> str:

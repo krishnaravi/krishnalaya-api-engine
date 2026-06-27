@@ -6,15 +6,15 @@ from __future__ import annotations
 import time
 from datetime import date as Date
 
-from .planetary import get_positions
-from .varga import analyze_varga
-from .ashtakavarga import get_ashtakavarga_analysis
-from .dasha import get_dasha_bhukti, analyze_dasha_relationship
+from core.planetary import get_positions
+from core.varga import analyze_varga
+from core.ashtakavarga import get_ashtakavarga_analysis
+from core.dasha import get_dasha_bhukti, analyze_dasha_relationship
 from .significations import (
     analyze_wealth, analyze_speech_profession,
     analyze_childbirth_family, analyze_maraka,
 )
-from .constants import SIGNS, SIGN_LORDS
+from core.constants import SIGNS, SIGN_LORDS
 
 
 def _aspects_on_sign(positions: dict, target_sign: int) -> list[dict]:
