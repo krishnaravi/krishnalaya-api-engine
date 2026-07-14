@@ -96,8 +96,8 @@ BAV_TABLES: dict[str, dict[str, list[int]]] = {
         'Mercury': [3, 5, 6, 11],
         'Jupiter': [6, 10, 11, 12],
         'Venus':   [6, 8, 11, 12],
-        'Saturn':  [1, 4, 7, 8, 9, 10, 11],
-        'Lagna':   [1, 4, 7, 8, 9, 10, 11],
+        'Saturn':  [3, 5, 6, 11],               # BPHS Ch.66 — total 39
+        'Lagna':   [1, 2, 4, 7, 8, 9, 10, 11],  # BPHS Ch.66
     },
     'Mercury': {
         'Sun':     [5, 6, 9, 11, 12],
@@ -139,4 +139,62 @@ BAV_TABLES: dict[str, dict[str, list[int]]] = {
         'Saturn':  [3, 5, 6, 11],
         'Lagna':   [1, 3, 4, 6, 10, 11],
     },
+}
+
+# ── Moolatrikona signs (planet → sign index) ──────────────────────────────
+MOOLATRIKONA = {
+    'Sun': 4, 'Moon': 1, 'Mars': 0, 'Mercury': 5,
+    'Jupiter': 8, 'Venus': 6, 'Saturn': 10,
+}
+
+# ── Natural friendships (planet → set of natural friends) ─────────────────
+NATURAL_FRIENDS: dict[str, list[str]] = {
+    'Sun':     ['Moon', 'Mars', 'Jupiter'],
+    'Moon':    ['Sun', 'Mercury'],
+    'Mars':    ['Sun', 'Moon', 'Jupiter'],
+    'Mercury': ['Sun', 'Venus'],
+    'Jupiter': ['Sun', 'Moon', 'Mars'],
+    'Venus':   ['Mercury', 'Saturn'],
+    'Saturn':  ['Mercury', 'Venus'],
+}
+
+NATURAL_ENEMIES: dict[str, list[str]] = {
+    'Sun':     ['Venus', 'Saturn'],
+    'Moon':    [],
+    'Mars':    ['Mercury'],
+    'Mercury': ['Moon'],
+    'Jupiter': ['Mercury', 'Venus'],
+    'Venus':   ['Sun', 'Moon'],
+    'Saturn':  ['Sun', 'Moon', 'Mars'],
+}
+
+# ── House metadata (1-indexed) ─────────────────────────────────────────────
+HOUSE_NAMES = {
+    1:  ('Tanu Bhava',    'House of Self',         'Sun'),
+    2:  ('Dhana Bhava',   'House of Wealth',       'Jupiter'),
+    3:  ('Sahaja Bhava',  'House of Siblings',     'Mars'),
+    4:  ('Sukha Bhava',   'House of Happiness',    'Moon'),
+    5:  ('Putra Bhava',   'House of Children',     'Jupiter'),
+    6:  ('Ari Bhava',     'House of Enemies',      'Mars'),
+    7:  ('Kalatra Bhava', 'House of Spouse',       'Venus'),
+    8:  ('Randhra Bhava', 'House of Longevity',    'Saturn'),
+    9:  ('Dharma Bhava',  'House of Dharma',       'Jupiter'),
+    10: ('Karma Bhava',   'House of Career',       'Sun'),
+    11: ('Labha Bhava',   'House of Gains',        'Jupiter'),
+    12: ('Vyaya Bhava',   'House of Liberation',   'Saturn'),
+}
+
+HOUSE_TYPES: dict[int, list[str]] = {
+    1:  ['Kendra', 'Trikona'],
+    2:  ['Panapara', 'Maraka'],
+    3:  ['Apoklima', 'Upachaya'],
+    4:  ['Kendra'],
+    5:  ['Panapara', 'Trikona'],
+    6:  ['Apoklima', 'Upachaya', 'Dusthana'],
+    7:  ['Kendra', 'Maraka'],
+    8:  ['Dusthana'],
+    9:  ['Apoklima', 'Trikona'],
+    10: ['Kendra', 'Upachaya'],
+    11: ['Panapara', 'Upachaya'],
+    12: ['Apoklima', 'Dusthana'],
 }

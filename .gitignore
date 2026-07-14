@@ -60,3 +60,4 @@ myapi/**/__pycache__/
 astrojyothi/
 astrojyothi-backup*/
 react_backup_20260618.tar.gz
+myapi/env
